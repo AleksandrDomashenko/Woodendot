@@ -1,0 +1,607 @@
+//подключение шрифтов
+@import url('https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&family=Roboto:wght@400;700&display=swap');
+
+@font-face {
+  font-family: 'Palatino';
+  src: url('../fonts/Palatino.eot');
+  src: local('☺'), url('../fonts/Palatino.woff') format('woff'),
+    url('../fonts/Palatino.ttf') format('truetype'), url('../fonts/Palatino.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+//нулевой стиль
+@import 'nulestyle.scss';
+//файл с миксинами
+@import 'mixin.scss';
+//переменные
+//шаблоны
+////////////////////////////////////////
+body {
+  height: 100%;
+  background-color: #e9e9e9;
+  overflow-x: hidden;
+}
+// wrapper
+.wrapper {
+  min-height: 100vh; //full screen
+  // overflow: hidden;
+  @include flex(flex, column, none, none);
+}
+// header
+.content {
+  flex: 1 1 auto;
+}
+.header {
+  padding: 25px 20px;
+  background-color: #fff;
+  font-family: Cardo;
+  @include font(17px, 23px, none, #000000, none);
+  @include flex(flex, none, none, center);
+
+  &__list {
+    @include flex(flex, none, none, center);
+    a {
+      margin-right: 20px;
+      color: #000000;
+      &:last-child {
+        margin-right: 0px;
+      }
+    }
+  }
+  &__logo {
+    padding-right: 243.02px;
+    margin: 0px auto;
+  }
+}
+
+// first frame
+.first-frame {
+  min-height: 100vh; //full screen
+  background: url('../img/first-frame/bi.png') 0 / 100% 100%;
+  background-repeat: no-repeat;
+
+  &__container {
+    @include flex(flex, column, space-between, center);
+    margin: 0px auto;
+    text-align: center;
+    min-height: 100vh;
+  }
+
+  &__title {
+    font-family: Roboto;
+    @include font(27px, 38px, 0.2px, #fff, 700);
+    margin-top: 450px;
+    margin-bottom: 2%;
+  }
+
+  &__button {
+    font-family: Cardo;
+    @include font(20px, 20px, none, #fff, 700);
+    box-shadow: 0px 0px 10px #fff;
+    padding: 4px 40px;
+    a {
+      color: #fff;
+    }
+    margin-bottom: 25%;
+  }
+
+  &__left-bottom {
+    background-color: #000;
+    font-family: 'Palatino';
+    @include font(15px, 20px, none, #fff, none);
+    align-self: flex-start;
+    padding: 15px 30px;
+  }
+}
+
+// second frame
+.second-frame {
+  background-color: #fff;
+
+  &__container {
+    @include flex(flex, none, space-around, center);
+    padding-top: 52px;
+    padding-bottom: 52px;
+    max-width: 1440px;
+    margin: 0px auto;
+  }
+
+  &__item {
+    @include flex(flex, none, none, center);
+    &:nth-child(4) {
+      margin-right: 120px;
+    }
+  }
+
+  &__img {
+    margin-right: 10px;
+  }
+
+  &__link,
+  &__rate {
+    font-family: Roboto;
+    @include font(13px, 24px, 0.2px, #000, none);
+  }
+}
+
+// three frame
+.three-frame {
+  background-color: #fff;
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    margin: 0px auto;
+    min-width: 100%;
+    img {
+      //адаптив изображений
+      width: 25%;
+      height: auto;
+    }
+  }
+}
+
+// four frame
+.four-frame {
+  padding-top: 115px;
+  background-color: #fff;
+  &__row {
+    @include flex(flex, row, flex-end, center);
+  }
+
+  &__column {
+    @include flex(flex, column, none, none);
+    margin-left: 35px;
+    margin-right: 20px;
+  }
+
+  &__title {
+    margin-bottom: 4px;
+  }
+
+  &__subtitle {
+    margin-bottom: 22.5px;
+  }
+
+  &__price {
+    margin-bottom: 16.5px;
+  }
+
+  &__text {
+    margin-bottom: 66px;
+  }
+}
+.titlename {
+  font-family: Roboto;
+  @include font(33px, 56px, none, none, 700);
+  text-align: right;
+}
+.subtitlename {
+  font-family: Cardo;
+  @include font(18px, 37px, none, none, none);
+  font-style: italic;
+  text-align: right;
+}
+.price {
+  font-family: Cardo;
+  @include font(15px, 28px, none, none, none);
+  text-align: right;
+}
+.textname {
+  font-family: Cardo;
+  @include font(18px, 31px, none, #525252, none);
+  text-align: right;
+  span {
+    font-style: italic;
+  }
+}
+.shopnow {
+  font-family: Roboto;
+  @include font(17px, 22px, none, none, none);
+  text-align: right;
+  text-decoration: underline;
+  a {
+    color: #000;
+  }
+}
+.img {
+  img {
+    width: 59vw;
+    height: auto;
+  }
+}
+
+// five frame
+.five-frame {
+  padding-top: 30px;
+  background-color: #fff;
+  &__row {
+    @include flex(flex, row, flex-start, center);
+  }
+
+  &__column {
+    margin-left: 20px;
+    margin-right: 75px;
+  }
+
+  &__title {
+    margin-bottom: 4px;
+    text-align: left;
+  }
+
+  &__subtitle {
+    margin-bottom: 21.5px;
+    text-align: left;
+  }
+
+  &__price {
+    margin-bottom: 26.3px;
+    text-align: left;
+  }
+
+  &__text {
+    margin-bottom: 24px;
+    text-align: left;
+  }
+
+  &__sizecolor {
+    margin-bottom: 47px;
+    text-align: left;
+  }
+
+  &__linkshop {
+    text-align: left;
+  }
+}
+.sizcol {
+  font-family: Cardo;
+  @include font(16px, 27px, none, #525252, none);
+}
+
+// six frame
+.six-frame {
+  background-color: #fff;
+  padding-top: 30px;
+  &__row {
+    @include flex(flex, none, right, center);
+  }
+
+  &__column {
+    margin-left: 35px;
+    margin-right: 20px;
+  }
+
+  &__uptitle {
+    font-family: Cardo;
+    @include font(none, 30px, none, #bc1414, none);
+    font-style: italic;
+    text-align: right;
+    margin-bottom: 10px;
+  }
+
+  &__title {
+    margin-bottom: 4px;
+  }
+
+  &__subtitle {
+    margin-bottom: 15px;
+  }
+
+  &__price {
+    margin-bottom: 25px;
+  }
+
+  &__text {
+    margin-bottom: 20px;
+  }
+
+  &__sizecolor {
+    text-align: right;
+    margin-bottom: 35px;
+  }
+}
+
+// seven-frame
+.seven-frame {
+  background-color: #fff;
+  padding-top: 30px;
+  &__row {
+    @include flex(flex, none, flex-start, center);
+  }
+
+  &__column {
+    margin-left: 20px;
+    margin-right: 75px;
+  }
+
+  &__title {
+    text-align: left;
+    margin-bottom: 4px;
+  }
+
+  &__subtitle {
+    text-align: left;
+    margin-bottom: 10px;
+  }
+
+  &__price {
+    text-align: left;
+    margin-bottom: 10px;
+  }
+
+  &__text {
+    text-align: left;
+    margin-bottom: 10px;
+  }
+
+  &__sizecolor {
+    margin-bottom: 15px;
+  }
+
+  &__linkshop {
+    text-align: left;
+    margin-bottom: 20px;
+  }
+
+  &__imgbody {
+    text-align: left;
+  }
+}
+
+// eight-frame
+.eight-frame {
+  background-color: #fff;
+  padding-top: 30px;
+  &__row {
+    @include flex(flex, none, flex-end, flex-end);
+  }
+
+  &__column {
+    margin-left: 35px;
+    margin-right: 20px;
+  }
+
+  &__title {
+    margin-bottom: 4px;
+  }
+
+  &__subtitle {
+    margin-bottom: 20px;
+  }
+
+  &__price {
+    margin-bottom: 40px;
+  }
+
+  &__text {
+    margin-bottom: 20px;
+  }
+
+  &__sizecolor {
+    text-align: right;
+    margin-bottom: 40px;
+  }
+}
+
+// ninth frame
+.ninth-frame {
+  background-color: #fff;
+  padding-top: 60px;
+  &__title {
+    font-family: Cardo;
+    @include font(30px, 39px, none, #3a3a3a, 700);
+    text-align: center;
+  }
+
+  &__subtitle {
+    font-family: Cardo;
+    @include font(18px, 33px, none, none, none);
+    text-align: center;
+  }
+
+  &__row {
+    padding-top: 37px;
+    @include flex(flex, none, center, center);
+    img {
+      width: 33vh;
+      margin-right: 10px;
+      &:last-child {
+        margin-right: 0px;
+      }
+    }
+  }
+
+  &__slider {
+    padding-top: 20px;
+    text-align: center;
+  }
+}
+
+// tenth frame
+.tenth-frame {
+  background-color: #fff;
+  padding-top: 135px;
+  &__title {
+    font-family: Cardo;
+    @include font(20px, 30px, none, #020202, none);
+    font-style: italic;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  &__subtitle {
+    font-family: Cardo;
+    @include font(15px, 21px, none, none, none);
+    text-align: center;
+    margin-bottom: 50px;
+  }
+  &__slider {
+    text-align: center;
+  }
+}
+
+// eleven frame
+.eleven-frame {
+  background-color: #fff;
+  padding-top: 150px;
+  &__row {
+    @include flex(flex, none, space-between, center);
+    margin: 0 auto;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  &__column {
+    @include flex(flex, column, center, center);
+    text-align: center;
+    img {
+      width: 5vw;
+      height: 5vw;
+    }
+    margin-right: 20px;
+    &:last-child {
+      margin-right: 0px;
+    }
+  }
+
+  &__img {
+    margin-bottom: 30px;
+  }
+
+  &__title {
+    font-family: Cardo;
+    @include font(24px, 35px, none, none, none);
+    margin-bottom: 12px;
+  }
+
+  &__text {
+    font-family: Cardo;
+    @include font(15px, 28px, none, none, 400);
+    margin-bottom: 28px;
+  }
+
+  &__link {
+    font-family: Cardo;
+    @include font(15px, 15px, none, none, none);
+    text-decoration: underline;
+    a {
+      color: #000;
+    }
+  }
+}
+
+// twelfth frame
+.twelfth-frame {
+  padding-top: 180px;
+  background-color: #fff;
+  &__title {
+    font-family: Cardo;
+    @include font(20px, 26px, 0.3em, #454545, normal);
+    text-align: center;
+  }
+
+  &__imgblock {
+    padding-top: 50px;
+    @include flex(flex, none, space-between, center);
+  }
+  padding-bottom: 50px;
+}
+
+// footer
+.footer {
+  max-width: 1140px;
+  margin: 0px auto;
+  font-family: Cardo;
+  padding-top: 50px;
+  &__row-start {
+    @include flex(flex, row, space-around, flex-start);
+  }
+
+  &__columns-left-side {
+    @include flex(flex, row, space-around, none);
+  }
+
+  &__column {
+    @include flex(flex, column, none, center);
+    min-width: 208px;
+    margin-right: 20px;
+  }
+
+  &__title {
+    text-transform: uppercase;
+    margin-bottom: 45px;
+    @include font(21px, 21px, none, #000, none);
+  }
+
+  &__link {
+    @include font(15px, 20px, none, #000, none);
+
+    text-align: center;
+    a {
+      color: #000;
+    }
+    li {
+      margin-bottom: 13px;
+    }
+  }
+
+  &__info-right-side {
+    min-width: 342px;
+    @include flex(flex, column, none, center);
+  }
+
+  &__title-right-side {
+    @include font(15px, 28px, none, #000, none);
+    margin-bottom: 17px;
+  }
+
+  &__button-sub {
+    background-color: #fff;
+    padding: 5px 41px;
+    border: 1px solid #000;
+    a {
+      color: #000;
+    }
+    margin-bottom: 31px;
+  }
+
+  &__img-right-side-top {
+    @include flex(flex, row, none, center);
+    img {
+      &:first-child {
+        margin-right: 40px;
+      }
+    }
+    margin-bottom: 19px;
+  }
+
+  &__row-end {
+    margin-top: 25px;
+    margin-bottom: 50px;
+    @include flex(flex, none, space-around, center);
+  }
+
+  &__imgblock {
+    img {
+      &:nth-child(4) {
+        margin-right: 10px;
+      }
+    }
+  }
+
+  &__terms {
+    a {
+      color: #000;
+    }
+    margin-right: -50px;
+    @include font(12px, 22px, none, #000, none);
+  }
+
+  &__policy {
+    a {
+      color: #000;
+    }
+    margin-left: -50px;
+    @include font(11px, 22px, none, #000, none);
+  }
+}
