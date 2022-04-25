@@ -14,30 +14,30 @@
 @import 'nulestyle.scss';
 //файл с миксинами
 @import 'mixin.scss';
-//переменные
-//шаблоны
-////////////////////////////////////////
 body {
-  height: 100%;
   background-color: #e9e9e9;
-  overflow-x: hidden;
 }
-// wrapper
 .wrapper {
-  min-height: 100vh; //full screen
-  // overflow: hidden;
-  @include flex(flex, column, none, none);
+  min-height: 100%; //full screen
+  overflow-x: hidden;
+  @include flex(flex, column, center, none);
 }
-// header
 .content {
   flex: 1 1 auto;
 }
+.container {
+  min-width: 100vw;
+}
+//HEADER
 .header {
   padding: 25px 20px;
   background-color: #fff;
   font-family: Cardo;
   @include font(17px, 23px, none, #000000, none);
-  @include flex(flex, none, none, center);
+
+  &__row {
+    @include flex(flex, none, none, center);
+  }
 
   &__list {
     @include flex(flex, none, none, center);
@@ -50,29 +50,20 @@ body {
     }
   }
   &__logo {
-    padding-right: 243.02px;
-    margin: 0px auto;
+    margin-left: 21%;
   }
 }
 
 // first frame
 .first-frame {
-  min-height: 100vh; //full screen
-  background: url('../img/first-frame/bi.png') 0 / 100% 100%;
-  background-repeat: no-repeat;
-
-  &__container {
-    @include flex(flex, column, space-between, center);
-    margin: 0px auto;
-    text-align: center;
-    min-height: 100vh;
-  }
+  @include flex(flex, column, space-between, center);
 
   &__title {
     font-family: Roboto;
     @include font(27px, 38px, 0.2px, #fff, 700);
-    margin-top: 450px;
-    margin-bottom: 2%;
+    margin-top: 20%;
+
+    text-align: center;
   }
 
   &__button {
@@ -83,7 +74,7 @@ body {
     a {
       color: #fff;
     }
-    margin-bottom: 25%;
+    margin-top: 2%;
   }
 
   &__left-bottom {
@@ -92,6 +83,19 @@ body {
     @include font(15px, 20px, none, #fff, none);
     align-self: flex-start;
     padding: 15px 30px;
+    margin-top: 25%;
+  }
+
+  &__background {
+    position: relative;
+    top: -780px;
+    left: 0;
+    z-index: -1;
+    img {
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+    }
   }
 }
 
