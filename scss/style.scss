@@ -15,7 +15,7 @@
 //файл с миксинами
 @import 'mixin.scss';
 body {
-  background-color: #e9e9e9;
+  // background-color: #e9e9e9;
 }
 .wrapper {
   min-height: 100%; //full screen
@@ -31,12 +31,11 @@ body {
 //HEADER
 .header {
   padding: 25px 20px;
-  background-color: #fff;
   font-family: Cardo;
   @include font(17px, 23px, none, #000000, none);
 
   &__row {
-    @include flex(flex, none, none, center);
+    @include flex(flex, none, space-between, center);
   }
 
   &__list {
@@ -50,20 +49,33 @@ body {
     }
   }
   &__logo {
-    margin-left: 21%;
+    margin-right: 50px;
   }
 }
 
 // first frame
 .first-frame {
-  @include flex(flex, column, space-between, center);
+  background-image: url('/img/first-frame/bi.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+
+  &__column {
+    @include flex(flex, column, space-between, center);
+    height: 100vh;
+  }
 
   &__title {
     font-family: Roboto;
     @include font(27px, 38px, 0.2px, #fff, 700);
-    margin-top: 20%;
 
+    margin-top: 19%;
+    white-space: nowrap;
     text-align: center;
+    p {
+      margin: 0 15px;
+    }
   }
 
   &__button {
@@ -74,28 +86,15 @@ body {
     a {
       color: #fff;
     }
-    margin-top: 2%;
+    margin-top: -15%;
   }
 
   &__left-bottom {
     background-color: #000;
     font-family: 'Palatino';
     @include font(15px, 20px, none, #fff, none);
-    align-self: flex-start;
     padding: 15px 30px;
-    margin-top: 25%;
-  }
-
-  &__background {
-    position: relative;
-    top: -780px;
-    left: 0;
-    z-index: -1;
-    img {
-      width: 100vw;
-      height: 100vh;
-      object-fit: cover;
-    }
+    align-self: flex-start;
   }
 }
 
@@ -103,40 +102,30 @@ body {
 .second-frame {
   background-color: #fff;
 
-  &__container {
+  &__row {
     @include flex(flex, none, space-around, center);
-    padding-top: 52px;
-    padding-bottom: 52px;
-    max-width: 1440px;
-    margin: 0px auto;
+    padding: 25px;
   }
 
   &__item {
     @include flex(flex, none, none, center);
-    &:nth-child(4) {
-      margin-right: 120px;
-    }
   }
 
   &__img {
-    margin-right: 10px;
+    margin-right: 15px;
   }
 
-  &__link,
-  &__rate {
+  &__text {
     font-family: Roboto;
-    @include font(13px, 24px, 0.2px, #000, none);
+    @include font(13px, 24px, 0.2px, none, none);
   }
 }
 
 // three frame
 .three-frame {
-  background-color: #fff;
-  &__container {
-    display: flex;
-    justify-content: space-between;
-    margin: 0px auto;
-    min-width: 100%;
+  &__row {
+    @include flex(flex, none, space-between, none);
+    width: 100vw;
     img {
       //адаптив изображений
       width: 25%;
@@ -148,7 +137,6 @@ body {
 // four frame
 .four-frame {
   padding-top: 115px;
-  background-color: #fff;
   &__row {
     @include flex(flex, row, flex-end, center);
   }
