@@ -41,8 +41,13 @@
     a {
       margin-right: 20px;
       color: #000000;
+      transition: 1.5s;
       &:last-child {
         margin-right: 0px;
+      }
+      &:hover {
+        transform: scale(1.1);
+        text-decoration: underline;
       }
     }
   }
@@ -79,8 +84,18 @@
   &__button {
     font-family: Cardo;
     @include font(20px, 20px, none, #fff, 700);
-    box-shadow: 0px 0px 10px #fff;
-    padding: 4px 40px;
+    box-shadow: 5px 5px 10px #fff;
+    border-radius: 10px;
+    padding: 4px 35px;
+
+    transition: 0.5s;
+    &:hover {
+      box-shadow: 0px 0px 10px #000;
+    }
+    &:active {
+      padding: 2px 30px;
+    }
+
     a {
       color: #fff;
     }
@@ -98,8 +113,6 @@
 
 // second frame
 .second-frame {
-  background-color: #fff;
-
   &__row {
     @include flex(flex, none, space-around, center);
     padding: 25px;
@@ -128,6 +141,11 @@
       //адаптив изображений
       width: 25%;
       height: auto;
+      filter: grayscale(1);
+      transition: 0.25s;
+      &:hover {
+        filter: grayscale(0);
+      }
     }
   }
 }
@@ -189,9 +207,18 @@
   font-family: Roboto;
   @include font(17px, 22px, none, none, none);
   text-align: right;
-  text-decoration: underline;
+
   a {
     color: #000;
+    border-radius: 5px;
+    padding: 5px;
+    transition: 0.3s;
+    &:hover {
+      color: #fff;
+      box-shadow: 0px 0px 10px #1ee40c;
+      background-color: #478141;
+      text-decoration: underline;
+    }
   }
 }
 .img {
@@ -466,16 +493,19 @@
   &__link {
     font-family: Cardo;
     @include font(15px, 15px, none, none, none);
-    text-decoration: underline;
     a {
       color: #000;
+      transition: 0.25s;
+      &:hover {
+        text-decoration: underline;
+      }
     }
   }
 }
 
 // twelfth frame
 .twelfth-frame {
-  padding-top: 180px;
+  margin-top: 180px;
   &__title {
     font-family: Cardo;
     @include font(20px, 26px, 0.3em, #454545, normal);
@@ -483,10 +513,10 @@
   }
 
   &__imgblock {
-    padding-top: 50px;
-    @include flex(flex, none, space-between, center);
+    margin-top: 50px;
+    @include flex(flex, none, space-around, center);
   }
-  padding-bottom: 50px;
+  margin-bottom: 50px;
 }
 
 // footer
@@ -520,6 +550,9 @@
     text-align: center;
     a {
       color: #000;
+      &:hover {
+        text-decoration: underline;
+      }
     }
     li {
       margin-bottom: 13px;
@@ -537,9 +570,14 @@
   }
 
   &__button-sub {
-    padding: 5px 41px;
     border: 1px solid #000;
+    transition: 0.3s;
+    &:hover {
+      border-radius: 10px;
+    }
     a {
+      display: inline-block;
+      padding: 5px 41px;
       color: #000;
     }
     margin-bottom: 31px;
@@ -572,6 +610,9 @@
   &__terms {
     a {
       color: #000;
+      &:hover {
+        text-decoration: underline;
+      }
     }
     margin-right: -50px;
     @include font(12px, 22px, none, #000, none);
@@ -580,6 +621,9 @@
   &__policy {
     a {
       color: #000;
+      &:hover {
+        text-decoration: underline;
+      }
     }
     margin-left: -50px;
     @include font(11px, 22px, none, #000, none);
