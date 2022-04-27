@@ -14,9 +14,7 @@
 @import 'nulestyle.scss';
 //файл с миксинами
 @import 'mixin.scss';
-body {
-  // background-color: #e9e9e9;
-}
+
 .wrapper {
   min-height: 100%; //full screen
   overflow-x: hidden;
@@ -206,7 +204,6 @@ body {
 // five frame
 .five-frame {
   padding-top: 30px;
-  background-color: #fff;
   &__row {
     @include flex(flex, row, flex-start, center);
   }
@@ -252,7 +249,6 @@ body {
 
 // six frame
 .six-frame {
-  background-color: #fff;
   padding-top: 30px;
   &__row {
     @include flex(flex, none, right, center);
@@ -295,7 +291,6 @@ body {
 
 // seven-frame
 .seven-frame {
-  background-color: #fff;
   padding-top: 30px;
   &__row {
     @include flex(flex, none, flex-start, center);
@@ -342,7 +337,6 @@ body {
 
 // eight-frame
 .eight-frame {
-  background-color: #fff;
   padding-top: 30px;
   &__row {
     @include flex(flex, none, flex-end, flex-end);
@@ -377,7 +371,6 @@ body {
 
 // ninth frame
 .ninth-frame {
-  background-color: #fff;
   padding-top: 60px;
   &__title {
     font-family: Cardo;
@@ -411,7 +404,6 @@ body {
 
 // tenth frame
 .tenth-frame {
-  background-color: #fff;
   padding-top: 135px;
   &__title {
     font-family: Cardo;
@@ -434,7 +426,6 @@ body {
 
 // eleven frame
 .eleven-frame {
-  background-color: #fff;
   padding-top: 150px;
   &__row {
     @include flex(flex, none, space-between, center);
@@ -485,7 +476,6 @@ body {
 // twelfth frame
 .twelfth-frame {
   padding-top: 180px;
-  background-color: #fff;
   &__title {
     font-family: Cardo;
     @include font(20px, 26px, 0.3em, #454545, normal);
@@ -501,8 +491,7 @@ body {
 
 // footer
 .footer {
-  max-width: 1140px;
-  margin: 0px auto;
+  background-color: #e9e9e9;
   font-family: Cardo;
   padding-top: 50px;
   &__row-start {
@@ -548,7 +537,6 @@ body {
   }
 
   &__button-sub {
-    background-color: #fff;
     padding: 5px 41px;
     border: 1px solid #000;
     a {
