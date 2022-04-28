@@ -38,6 +38,9 @@
 
   &__list {
     @include flex(flex, none, none, center);
+    @media (max-width: 767px) {
+      visibility: hidden;
+    }
     a {
       margin-right: 20px;
       color: #000000;
@@ -53,6 +56,100 @@
   }
   &__logo {
     margin-right: 50px;
+    @media (max-width: 767px) {
+      img {
+        position: relative;
+        transform: translateX(-90%);
+        left: 100%;
+      }
+    }
+  }
+
+  .burger {
+    display: none;
+    padding-left: 3px;
+    padding-top: 3px;
+    @media (max-width: 767px) {
+      display: inline-block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      margin-top: 30px;
+      margin-left: 10px;
+      z-index: 15;
+    }
+
+    // стили для линий
+    &__first-line,
+    &__second-line,
+    &__threeth-line {
+      width: 40%;
+      height: 1px;
+      border: 0.5px solid black;
+      background-color: black;
+      transition: 0.5s;
+      &:not(:last-child) {
+        margin-bottom: 7px;
+      }
+    }
+
+    &:hover {
+      // стили первой линии при наведении
+      .burger__first-line {
+        transform: rotate(45deg);
+        position: relative;
+        top: 8.5px;
+        transition: 0.5s;
+      }
+
+      // стили третьей линии при наведении
+      .burger__second-line {
+        visibility: hidden;
+        transition: 0.1ms;
+      }
+
+      // стили третьей линии при наведении
+      .burger__threeth-line {
+        transform: rotate(-45deg);
+        position: relative;
+        top: -8.5px;
+        transition: 0.5s;
+      }
+      // событие которое показывает меню при наведении/нажатии на бургер меню
+      .burger__menu {
+        visibility: visible;
+        transition: 0.5s ease-in-out;
+        position: relative;
+        left: 80px;
+      }
+    }
+
+    &__menu {
+      visibility: hidden;
+      position: relative;
+      top: -45px;
+      left: -200px;
+      transition: 0.5s ease-in-out;
+    }
+
+    &__list {
+      background-color: #000;
+      border-radius: 5%;
+      text-align: center;
+    }
+
+    &__link {
+      @include font(none, 14px, 0.1em, none, none);
+      padding-left: 5px;
+      padding-top: 10px;
+      padding-right: 5px;
+      &:last-child {
+        padding-bottom: 10px;
+      }
+      a {
+        color: #fff;
+      }
+    }
   }
 }
 
