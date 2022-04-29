@@ -184,13 +184,8 @@ h1, h2, h3, h4, h5, h6 {
   text-shadow: 8px 8px 3px #000000;
 }
 
-@media (max-width: 767px) {
-  .header__logo img {
-    position: relative;
-    -webkit-transform: translateX(-90%);
-            transform: translateX(-90%);
-    left: 100%;
-  }
+.header__logo {
+  margin-right: 15px;
 }
 
 .header .burger {
@@ -252,14 +247,14 @@ h1, h2, h3, h4, h5, h6 {
   -webkit-transition: 0.5s ease-in-out;
   transition: 0.5s ease-in-out;
   position: relative;
-  top: 30px;
+  top: 32px;
   left: 0px;
 }
 
 .header .burger__menu {
   visibility: hidden;
   position: relative;
-  top: 30px;
+  top: 32px;
   left: -250px;
   -webkit-transition: 0.5s ease-in-out;
   transition: 0.5s ease-in-out;
@@ -321,9 +316,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .first-frame__title {
-  position: absolute;
+  position: relative;
   z-index: 1;
-  margin-top: 17%;
+  bottom: 380px;
   font-family: Roboto;
   font-size: 27px;
   line-height: 38px;
@@ -351,9 +346,9 @@ h1, h2, h3, h4, h5, h6 {
   padding: 4px 35px;
   -webkit-transition: 0.5s;
   transition: 0.5s;
-  position: absolute;
+  position: relative;
   z-index: 1;
-  margin-top: 30%;
+  bottom: 300px;
 }
 
 .first-frame__button:hover {
@@ -372,7 +367,7 @@ h1, h2, h3, h4, h5, h6 {
 .first-frame__left-bottom {
   position: relative;
   z-index: 1;
-  bottom: 50px;
+  bottom: 154px;
   background-color: #000;
   font-family: 'Palatino';
   font-size: 15px;

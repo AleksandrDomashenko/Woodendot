@@ -57,13 +57,7 @@
     }
   }
   &__logo {
-    @media (max-width: 767px) {
-      img {
-        position: relative;
-        transform: translateX(-90%);
-        left: 100%;
-      }
-    }
+    margin-right: 15px;
   }
 
   .burger {
@@ -121,7 +115,7 @@
         visibility: visible;
         transition: 0.5s ease-in-out;
         position: relative;
-        top: 30px;
+        top: 32px;
         left: 0px;
       }
     }
@@ -130,14 +124,13 @@
       //позичия бургер меню до показа
       visibility: hidden;
       position: relative;
-      top: 30px;
+      top: 32px;
       left: -250px;
       transition: 0.5s ease-in-out;
     }
 
     &__list {
       background-color: #bc985c;
-
       border-radius: 15% 3% 15% 3%;
       text-align: center;
     }
@@ -187,9 +180,9 @@
   }
 
   &__title {
-    position: absolute;
+    position: relative;
     z-index: 1;
-    margin-top: 17%;
+    bottom: 380px;
     font-family: Roboto;
     @include font(27px, 38px, 0.2px, #fff, 700);
     white-space: nowrap;
@@ -206,9 +199,9 @@
     border-radius: 10px;
     padding: 4px 35px;
     transition: 0.5s;
-    position: absolute;
+    position: relative;
     z-index: 1;
-    margin-top: 30%;
+    bottom: 300px;
     &:hover {
       box-shadow: 0px 0px 10px #000;
     }
@@ -223,7 +216,7 @@
   &__left-bottom {
     position: relative;
     z-index: 1;
-    bottom: 50px;
+    bottom: 154px;
     background-color: #000;
     font-family: 'Palatino';
     @include font(15px, 20px, none, #fff, none);
