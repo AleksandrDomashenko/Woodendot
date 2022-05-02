@@ -160,7 +160,6 @@
   &__title {
     font-family: Roboto;
     @include font(27px, 38px, 0.2px, #fff, 700);
-    white-space: nowrap;
     text-align: center;
     margin-top: 19%;
     p {
@@ -197,21 +196,38 @@
 // second frame
 .second-frame {
   &__row {
-    @include flex(flex, none, space-around, center);
+    @include flex(flex, none, space-between, center);
     padding: 25px;
+    @media (max-width: 768px) {
+      @include flex(flex, column, space-between, flex-start);
+    }
   }
 
   &__item {
     @include flex(flex, none, none, center);
+    @media (max-width: 768px) {
+      width: 100%;
+      @include flex(flex, row-reverse, space-between, center);
+      margin-bottom: 15px;
+    }
   }
 
   &__img {
     margin-right: 15px;
+    @media (max-width: 768px) {
+      margin-right: 0px;
+      img {
+        width: 100%;
+      }
+    }
   }
 
   &__text {
     font-family: Roboto;
     @include font(13px, 24px, 0.2px, none, none);
+    @media (max-width: 768px) {
+      width: 150px;
+    }
   }
 }
 
@@ -220,10 +236,15 @@
   &__row {
     @include flex(flex, none, space-between, none);
     width: 100vw;
+    @media (max-width: 768px) {
+      flex-wrap: wrap;
+    }
     img {
       //адаптив изображений
       width: 25%;
-      height: auto;
+      @media (max-width: 768px) {
+        width: 50%;
+      }
       filter: grayscale(1);
       transition: 0.25s;
       &:hover {

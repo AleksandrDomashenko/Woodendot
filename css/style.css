@@ -118,7 +118,7 @@ h1, h2, h3, h4, h5, h6 {
 .header__row {
   padding: 25px 20px;
   font-family: Cardo;
-  font-size: clamp(7px, 1.5vw, 39px);
+  font-size: clamp(12px, 1.5vw, 39px);
   line-height: clamp(8px, 2vw, 45px);
   letter-spacing: none;
   color: #000000;
@@ -260,7 +260,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .header .burger__link {
-  font-size: clamp(none-10px, 1.5vw, none22px);
+  font-size: clamp(none-5px, 1.5vw, none22px);
   line-height: clamp(-1px, 2vw, 36px);
   letter-spacing: 0.1em;
   color: none;
@@ -302,12 +302,11 @@ h1, h2, h3, h4, h5, h6 {
 
 .first-frame__title {
   font-family: Roboto;
-  font-size: clamp(17px, 1.5vw, 49px);
+  font-size: clamp(22px, 1.5vw, 49px);
   line-height: clamp(23px, 2vw, 60px);
   letter-spacing: 0.2px;
   color: #fff;
   font-weight: 700;
-  white-space: nowrap;
   text-align: center;
   margin-top: 19%;
 }
@@ -318,7 +317,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .first-frame__button {
   font-family: Cardo;
-  font-size: clamp(10px, 1.5vw, 42px);
+  font-size: clamp(15px, 1.5vw, 42px);
   line-height: clamp(5px, 2vw, 42px);
   letter-spacing: none;
   color: #fff;
@@ -344,7 +343,7 @@ h1, h2, h3, h4, h5, h6 {
 .first-frame__left-bottom {
   background-color: #000;
   font-family: 'Palatino';
-  font-size: clamp(5px, 1.5vw, 37px);
+  font-size: clamp(10px, 1.5vw, 37px);
   line-height: clamp(5px, 2vw, 42px);
   letter-spacing: none;
   color: #fff;
@@ -363,12 +362,31 @@ h1, h2, h3, h4, h5, h6 {
   -webkit-box-direction: normal;
       -ms-flex-direction: none;
           flex-direction: none;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   padding: 25px;
+}
+
+@media (max-width: 768px) {
+  .second-frame__row {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
 }
 
 .second-frame__item {
@@ -387,17 +405,52 @@ h1, h2, h3, h4, h5, h6 {
           align-items: center;
 }
 
+@media (max-width: 768px) {
+  .second-frame__item {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: row-reverse;
+            flex-direction: row-reverse;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-bottom: 15px;
+  }
+}
+
 .second-frame__img {
   margin-right: 15px;
 }
 
+@media (max-width: 768px) {
+  .second-frame__img {
+    margin-right: 0px;
+  }
+  .second-frame__img img {
+    width: 100%;
+  }
+}
+
 .second-frame__text {
   font-family: Roboto;
-  font-size: clamp(3px, 1.5vw, 35px);
+  font-size: clamp(8px, 1.5vw, 35px);
   line-height: clamp(9px, 2vw, 46px);
   letter-spacing: 0.2px;
   color: none;
   font-weight: none;
+}
+
+@media (max-width: 768px) {
+  .second-frame__text {
+    width: 150px;
+  }
 }
 
 .three-frame__row {
@@ -417,13 +470,25 @@ h1, h2, h3, h4, h5, h6 {
   width: 100vw;
 }
 
+@media (max-width: 768px) {
+  .three-frame__row {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+}
+
 .three-frame__row img {
   width: 25%;
-  height: auto;
   -webkit-filter: grayscale(1);
           filter: grayscale(1);
   -webkit-transition: 0.25s;
   transition: 0.25s;
+}
+
+@media (max-width: 768px) {
+  .three-frame__row img {
+    width: 50%;
+  }
 }
 
 .three-frame__row img:hover {
@@ -487,7 +552,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .titlename {
   font-family: Roboto;
-  font-size: clamp(23px, 1.5vw, 55px);
+  font-size: clamp(28px, 1.5vw, 55px);
   line-height: clamp(41px, 2vw, 78px);
   letter-spacing: none;
   color: none;
@@ -497,7 +562,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .subtitlename {
   font-family: Cardo;
-  font-size: clamp(8px, 1.5vw, 40px);
+  font-size: clamp(13px, 1.5vw, 40px);
   line-height: clamp(22px, 2vw, 59px);
   letter-spacing: none;
   color: none;
@@ -508,7 +573,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .price {
   font-family: Cardo;
-  font-size: clamp(5px, 1.5vw, 37px);
+  font-size: clamp(10px, 1.5vw, 37px);
   line-height: clamp(13px, 2vw, 50px);
   letter-spacing: none;
   color: none;
@@ -518,7 +583,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .textname {
   font-family: Cardo;
-  font-size: clamp(8px, 1.5vw, 40px);
+  font-size: clamp(13px, 1.5vw, 40px);
   line-height: clamp(16px, 2vw, 53px);
   letter-spacing: none;
   color: #525252;
@@ -532,7 +597,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .shopnow {
   font-family: Roboto;
-  font-size: clamp(7px, 1.5vw, 39px);
+  font-size: clamp(12px, 1.5vw, 39px);
   line-height: clamp(7px, 2vw, 44px);
   letter-spacing: none;
   color: none;
@@ -617,7 +682,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .sizcol {
   font-family: Cardo;
-  font-size: clamp(6px, 1.5vw, 38px);
+  font-size: clamp(11px, 1.5vw, 38px);
   line-height: clamp(12px, 2vw, 49px);
   letter-spacing: none;
   color: #525252;
@@ -651,7 +716,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .six-frame__uptitle {
   font-family: Cardo;
-  font-size: clamp(none-10px, 1.5vw, none22px);
+  font-size: clamp(none-5px, 1.5vw, none22px);
   line-height: clamp(15px, 2vw, 52px);
   letter-spacing: none;
   color: #bc1414;
@@ -792,7 +857,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .ninth-frame__title {
   font-family: Cardo;
-  font-size: clamp(20px, 1.5vw, 52px);
+  font-size: clamp(25px, 1.5vw, 52px);
   line-height: clamp(24px, 2vw, 61px);
   letter-spacing: none;
   color: #3a3a3a;
@@ -802,7 +867,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .ninth-frame__subtitle {
   font-family: Cardo;
-  font-size: clamp(8px, 1.5vw, 40px);
+  font-size: clamp(13px, 1.5vw, 40px);
   line-height: clamp(18px, 2vw, 55px);
   letter-spacing: none;
   color: none;
@@ -847,7 +912,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .tenth-frame__title {
   font-family: Cardo;
-  font-size: clamp(10px, 1.5vw, 42px);
+  font-size: clamp(15px, 1.5vw, 42px);
   line-height: clamp(15px, 2vw, 52px);
   letter-spacing: none;
   color: #020202;
@@ -859,7 +924,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .tenth-frame__subtitle {
   font-family: Cardo;
-  font-size: clamp(5px, 1.5vw, 37px);
+  font-size: clamp(10px, 1.5vw, 37px);
   line-height: clamp(6px, 2vw, 43px);
   letter-spacing: none;
   color: none;
@@ -928,7 +993,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .eleven-frame__title {
   font-family: Cardo;
-  font-size: clamp(14px, 1.5vw, 46px);
+  font-size: clamp(19px, 1.5vw, 46px);
   line-height: clamp(20px, 2vw, 57px);
   letter-spacing: none;
   color: none;
@@ -938,7 +1003,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .eleven-frame__text {
   font-family: Cardo;
-  font-size: clamp(5px, 1.5vw, 37px);
+  font-size: clamp(10px, 1.5vw, 37px);
   line-height: clamp(13px, 2vw, 50px);
   letter-spacing: none;
   color: none;
@@ -948,7 +1013,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .eleven-frame__link {
   font-family: Cardo;
-  font-size: clamp(5px, 1.5vw, 37px);
+  font-size: clamp(10px, 1.5vw, 37px);
   line-height: clamp(0px, 2vw, 37px);
   letter-spacing: none;
   color: none;
@@ -972,7 +1037,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .twelfth-frame__title {
   font-family: Cardo;
-  font-size: clamp(10px, 1.5vw, 42px);
+  font-size: clamp(15px, 1.5vw, 42px);
   line-height: clamp(11px, 2vw, 48px);
   letter-spacing: 0.3em;
   color: #454545;
@@ -1053,7 +1118,7 @@ h1, h2, h3, h4, h5, h6 {
 .footer__title {
   text-transform: uppercase;
   margin-bottom: 45px;
-  font-size: clamp(11px, 1.5vw, 43px);
+  font-size: clamp(16px, 1.5vw, 43px);
   line-height: clamp(6px, 2vw, 43px);
   letter-spacing: none;
   color: #000;
@@ -1061,7 +1126,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .footer__link {
-  font-size: clamp(5px, 1.5vw, 37px);
+  font-size: clamp(10px, 1.5vw, 37px);
   line-height: clamp(5px, 2vw, 42px);
   letter-spacing: none;
   color: #000;
@@ -1099,7 +1164,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .footer__title-right-side {
-  font-size: clamp(5px, 1.5vw, 37px);
+  font-size: clamp(10px, 1.5vw, 37px);
   line-height: clamp(13px, 2vw, 50px);
   letter-spacing: none;
   color: #000;
@@ -1168,7 +1233,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .footer__terms {
   margin-right: -50px;
-  font-size: clamp(2px, 1.5vw, 34px);
+  font-size: clamp(7px, 1.5vw, 34px);
   line-height: clamp(7px, 2vw, 44px);
   letter-spacing: none;
   color: #000;
@@ -1185,7 +1250,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .footer__policy {
   margin-left: -50px;
-  font-size: clamp(1px, 1.5vw, 33px);
+  font-size: clamp(6px, 1.5vw, 33px);
   line-height: clamp(7px, 2vw, 44px);
   letter-spacing: none;
   color: #000;
