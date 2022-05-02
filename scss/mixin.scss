@@ -5,8 +5,8 @@
   align-items: $ai;
 }
 @mixin font($fz, $lh, $ls, $c, $fw) {
-  font-size: $fz;
-  line-height: $lh;
+  font-size: clamp($fz - 15px, 1.5vw, $fz + 22px);
+  line-height: clamp($lh - 15px, 2vw, $lh + 22px);
   letter-spacing: $ls;
   color: $c;
   font-weight: $fw;
