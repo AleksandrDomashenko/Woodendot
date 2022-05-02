@@ -299,7 +299,7 @@ h1, h2, h3, h4, h5, h6 {
 .first-frame__title {
   font-family: Roboto;
   font-size: clamp(12px, 1.5vw, 50px);
-  line-height: 38px;
+  line-height: clamp(23px, 1.5vw, 60px);
   letter-spacing: 0.2px;
   color: #fff;
   font-weight: 700;

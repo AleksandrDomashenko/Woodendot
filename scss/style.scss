@@ -156,7 +156,7 @@
 
   &__title {
     font-family: Roboto;
-    @include font(clamp(12px, 1.5vw, 50px), 38px, 0.2px, #fff, 700);
+    @include font(clamp(12px, 1.5vw, 50px), clamp(23px, 1.5vw, 60px), 0.2px, #fff, 700);
     white-space: nowrap;
     text-align: center;
     margin-top: 257px;
