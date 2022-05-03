@@ -11,3 +11,10 @@
   color: $c;
   font-weight: $fw;
 }
+@mixin font_little($fz, $lh, $ls, $c, $fw) {
+  font-size: $fz;
+  line-height: $lh;
+  letter-spacing: $ls;
+  color: $c;
+  font-weight: $fw;
+}

@@ -60,7 +60,6 @@
   .burger {
     display: none;
     padding-left: 3px;
-    padding-top: 7px;
     @media (max-width: 767px) {
       display: inline-block;
       position: absolute;
@@ -68,7 +67,7 @@
       left: 0;
       margin-top: 30px;
       margin-left: 10px;
-      z-index: 15;
+      z-index: 1;
     }
 
     // стили для линий
@@ -242,7 +241,7 @@
 
   &__text {
     font-family: Roboto;
-    @include font(13px, 24px, 0.2px, none, none);
+    @include font_little(13px, 24px, 0.2px, none, none);
     @media (max-width: 768px) {
       width: 150px;
     }
@@ -255,6 +254,9 @@
     @include flex(flex, none, space-between, none);
     @media (max-width: 768px) {
       flex-wrap: wrap;
+    }
+    @media (max-width: 480px) {
+      @include flex(flex, column, space-between, center);
     }
     img {
       width: 25%;
@@ -276,6 +278,24 @@
         }
         &:last-child {
           border-radius: $br 0 0 0;
+        }
+      }
+      @media (max-width: 480px) {
+        width: 100vw;
+        &:first-child {
+          border-radius: 0 0 0 0;
+        }
+        &:nth-child(2) {
+          border-radius: 0 0 0 0;
+        }
+        &:nth-child(3) {
+          border-radius: 0 0 0 0;
+        }
+        &:last-child {
+          border-radius: 0 0 0 0;
+        }
+        &:not(:last-child) {
+          margin-bottom: 10px;
         }
       }
 
