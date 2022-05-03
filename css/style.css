@@ -172,17 +172,13 @@ h1, h2, h3, h4, h5, h6 {
   margin-right: 0px;
 }
 
-.header__logo {
-  margin-right: 3px;
-}
-
 .header__logo img {
   width: clamp(100px, 10vw, 900px);
 }
 
 .header .burger {
   display: none;
-  padding-left: 3px;
+  padding-left: 10px;
 }
 
 @media (max-width: 767px) {
