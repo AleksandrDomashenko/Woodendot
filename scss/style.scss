@@ -152,16 +152,18 @@
   background: url('/img/first-frame/bi.png') center/cover no-repeat;
 
   &__column {
-    @include flex(flex, column, space-between, center);
+    @include flex(flex, column, flex-end, center);
     width: 100vw;
     height: 100vh;
+    @media (max-width: 768px) {
+      height: 70vh;
+    }
   }
 
   &__title {
     font-family: Roboto;
     @include font(27px, 38px, 0.2px, #fff, 700);
     text-align: center;
-    margin-top: 19%;
     p {
       margin: 0 15px;
     }
@@ -174,7 +176,7 @@
     border-radius: 10px;
     padding: 4px 35px;
     transition: 0.5s;
-    margin-top: 3%;
+    margin-top: 4%;
     &:hover {
       box-shadow: 0px 0px 10px #000;
     }
@@ -189,7 +191,7 @@
     @include font(15px, 20px, none, #fff, none);
     padding: 15px 30px;
     align-self: flex-start;
-    margin-top: 8%;
+    margin-top: 13%;
   }
 }
 
@@ -235,20 +237,37 @@
 .three-frame {
   &__row {
     @include flex(flex, none, space-between, none);
-    width: 100vw;
     @media (max-width: 768px) {
       flex-wrap: wrap;
     }
     img {
-      //адаптив изображений
       width: 25%;
-      @media (max-width: 768px) {
-        width: 50%;
-      }
       filter: grayscale(1);
       transition: 0.25s;
+      @media (max-width: 768px) {
+        width: 50%;
+        filter: none;
+        transition: none;
+        $br: 25px;
+        &:first-child {
+          border-radius: 0 0 $br 0;
+        }
+        &:nth-child(2) {
+          border-radius: 0 0 0 $br;
+        }
+        &:nth-child(3) {
+          border-radius: 0 $br 0 0;
+        }
+        &:last-child {
+          border-radius: $br 0 0 0;
+        }
+      }
+
       &:hover {
         filter: grayscale(0);
+        @media (max-width: 768px) {
+          filter: none;
+        }
       }
     }
   }

@@ -290,14 +290,20 @@ h1, h2, h3, h4, h5, h6 {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   width: 100vw;
   height: 100vh;
+}
+
+@media (max-width: 768px) {
+  .first-frame__column {
+    height: 70vh;
+  }
 }
 
 .first-frame__title {
@@ -308,7 +314,6 @@ h1, h2, h3, h4, h5, h6 {
   color: #fff;
   font-weight: 700;
   text-align: center;
-  margin-top: 19%;
 }
 
 .first-frame__title p {
@@ -328,7 +333,7 @@ h1, h2, h3, h4, h5, h6 {
   padding: 4px 35px;
   -webkit-transition: 0.5s;
   transition: 0.5s;
-  margin-top: 3%;
+  margin-top: 4%;
 }
 
 .first-frame__button:hover {
@@ -351,7 +356,7 @@ h1, h2, h3, h4, h5, h6 {
   padding: 15px 30px;
   -ms-flex-item-align: start;
       align-self: flex-start;
-  margin-top: 8%;
+  margin-top: 13%;
 }
 
 .second-frame__row {
@@ -467,7 +472,6 @@ h1, h2, h3, h4, h5, h6 {
   -webkit-box-align: none;
       -ms-flex-align: none;
           align-items: none;
-  width: 100vw;
 }
 
 @media (max-width: 768px) {
@@ -488,12 +492,35 @@ h1, h2, h3, h4, h5, h6 {
 @media (max-width: 768px) {
   .three-frame__row img {
     width: 50%;
+    -webkit-filter: none;
+            filter: none;
+    -webkit-transition: none;
+    transition: none;
+  }
+  .three-frame__row img:first-child {
+    border-radius: 0 0 25px 0;
+  }
+  .three-frame__row img:nth-child(2) {
+    border-radius: 0 0 0 25px;
+  }
+  .three-frame__row img:nth-child(3) {
+    border-radius: 0 25px 0 0;
+  }
+  .three-frame__row img:last-child {
+    border-radius: 25px 0 0 0;
   }
 }
 
 .three-frame__row img:hover {
   -webkit-filter: grayscale(0);
           filter: grayscale(0);
+}
+
+@media (max-width: 768px) {
+  .three-frame__row img:hover {
+    -webkit-filter: none;
+            filter: none;
+  }
 }
 
 .four-frame {
