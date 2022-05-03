@@ -322,6 +322,10 @@
     @include flex(flex, column, none, none);
     margin-left: 35px;
     margin-right: 20px;
+    @media (max-width: 768px) {
+      margin: 0;
+      width: 90vw;
+    }
   }
 
   &__title {
@@ -346,9 +350,6 @@
     margin-bottom: 66px;
     @media (max-width: 768px) {
       margin-bottom: 20px;
-      p {
-        width: 85vw;
-      }
     }
   }
 }
@@ -428,8 +429,8 @@
     margin-left: 20px;
     margin-right: 75px;
     @media (max-width: 768px) {
-      margin-left: 0;
-      margin-right: 0;
+      margin: 0;
+      width: 90vw;
     }
   }
 
@@ -465,9 +466,6 @@
     @media (max-width: 768px) {
       text-align: center;
       margin-bottom: 20px;
-      p {
-        width: 85vw;
-      }
     }
   }
 
@@ -497,19 +495,30 @@
   padding-top: 30px;
   &__row {
     @include flex(flex, none, right, center);
+    @media (max-width: 768px) {
+      @include flex(flex, column-reverse, center, center);
+    }
   }
 
   &__column {
+    @include flex(flex, column, none, none);
     margin-left: 35px;
     margin-right: 20px;
+    @media (max-width: 768px) {
+      margin: 0;
+      width: 90vw;
+    }
   }
 
   &__uptitle {
     font-family: Cardo;
-    @include font(none, 30px, none, #bc1414, none);
+    @include font_little(none, 30px, none, #bc1414, none);
     font-style: italic;
     text-align: right;
     margin-bottom: 10px;
+    @media (max-width: 768px) {
+      margin-bottom: 4px;
+    }
   }
 
   &__title {
@@ -518,6 +527,9 @@
 
   &__subtitle {
     margin-bottom: 15px;
+    @media (max-width: 768px) {
+      margin-bottom: 7.5px;
+    }
   }
 
   &__price {
@@ -531,6 +543,10 @@
   &__sizecolor {
     text-align: right;
     margin-bottom: 35px;
+    @media (max-width: 768px) {
+      text-align: center;
+      margin-bottom: 25px;
+    }
   }
 }
 
@@ -539,44 +555,75 @@
   padding-top: 30px;
   &__row {
     @include flex(flex, none, flex-start, center);
+    @media (max-width: 768px) {
+      @include flex(flex, column, center, center);
+    }
   }
 
   &__column {
     margin-left: 20px;
     margin-right: 75px;
+    @media (max-width: 768px) {
+      margin: 0;
+      width: 90vw;
+    }
   }
 
   &__title {
     text-align: left;
     margin-bottom: 4px;
+    @media (max-width: 768px) {
+      text-align: center;
+      margin-top: 10px;
+    }
   }
 
   &__subtitle {
     text-align: left;
     margin-bottom: 10px;
+    @media (max-width: 768px) {
+      text-align: center;
+      margin-bottom: 4px;
+    }
   }
 
   &__price {
     text-align: left;
     margin-bottom: 10px;
+    @media (max-width: 768px) {
+      text-align: center;
+    }
   }
 
   &__text {
     text-align: left;
     margin-bottom: 10px;
+    @media (max-width: 768px) {
+      text-align: center;
+    }
   }
 
   &__sizecolor {
     margin-bottom: 15px;
+    @media (max-width: 768px) {
+      text-align: center;
+    }
   }
 
   &__linkshop {
     text-align: left;
     margin-bottom: 20px;
+    @media (max-width: 768px) {
+      text-align: right;
+    }
   }
 
   &__imgbody {
     text-align: left;
+    @media (max-width: 768px) {
+      text-align: center;
+      @include flex(flex, none, space-around, center);
+    }
   }
 }
 
@@ -585,23 +632,39 @@
   padding-top: 30px;
   &__row {
     @include flex(flex, none, flex-end, flex-end);
+    @media (max-width: 768px) {
+      @include flex(flex, column-reverse, center, center);
+    }
   }
 
   &__column {
     margin-left: 35px;
     margin-right: 20px;
+    @media (max-width: 768px) {
+      margin: 0;
+      width: 90vw;
+    }
   }
 
   &__title {
     margin-bottom: 4px;
+    @media (max-width: 768px) {
+      margin-top: 10px;
+    }
   }
 
   &__subtitle {
     margin-bottom: 20px;
+    @media (max-width: 768px) {
+      margin-bottom: 10px;
+    }
   }
 
   &__price {
     margin-bottom: 40px;
+    @media (max-width: 768px) {
+      margin-bottom: 20px;
+    }
   }
 
   &__text {
@@ -611,6 +674,10 @@
   &__sizecolor {
     text-align: right;
     margin-bottom: 40px;
+    @media (max-width: 768px) {
+      text-align: center;
+      margin-bottom: 20px;
+    }
   }
 }
 
@@ -625,25 +692,63 @@
 
   &__subtitle {
     font-family: Cardo;
-    @include font(18px, 33px, none, none, none);
+    @include font_little(18px, 33px, none, none, none);
     text-align: center;
-  }
-
-  &__row {
-    padding-top: 37px;
-    @include flex(flex, none, center, center);
-    img {
-      width: 33vh;
-      margin-right: 10px;
-      &:last-child {
-        margin-right: 0px;
-      }
-    }
   }
 
   &__slider {
-    padding-top: 20px;
-    text-align: center;
+    width: 50vh;
+    margin: 20px auto 0 auto;
+    overflow: hidden;
+
+    input {
+      position: absolute;
+      visibility: hidden;
+    }
+  }
+  &__slides {
+    width: 300%;
+    @include flex(flex, none, none, none);
+  }
+  &__slide {
+    width: 33.333%;
+    transition: all 0.6s ease-in-out;
+    img {
+      width: 50vh;
+    }
+  }
+  &__navigation {
+    position: relative;
+    bottom: 25px;
+    width: 80px;
+    margin: 0 auto;
+    @include flex(flex, none, none, none);
+  }
+  &__bar {
+    width: 10px;
+    height: 10px;
+    &:not(:last-child) {
+      margin-right: 20px;
+    }
+    cursor: pointer;
+    background-color: #000;
+    opacity: 0.7;
+    transition: all 0.6s ease-in-out;
+
+    &:hover {
+      opacity: 1;
+      transform: scale(1.2);
+    }
+  }
+
+  #r1:checked ~ &__s1 {
+    margin-left: 0;
+  }
+  #r2:checked ~ &__s1 {
+    margin-left: -33.333%;
+  }
+  #r3:checked ~ &__s1 {
+    margin-left: -66.666%;
   }
 }
 
