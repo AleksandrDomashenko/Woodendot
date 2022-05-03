@@ -310,9 +310,12 @@
 
 // four frame
 .four-frame {
-  padding-top: 115px;
+  padding-top: 80px;
   &__row {
-    @include flex(flex, row, flex-end, center);
+    @include flex(flex, none, flex-end, center);
+    @media (max-width: 768px) {
+      @include flex(flex, column-reverse, center, center);
+    }
   }
 
   &__column {
@@ -323,10 +326,16 @@
 
   &__title {
     margin-bottom: 4px;
+    @media (max-width: 768px) {
+      margin-top: 10px;
+    }
   }
 
   &__subtitle {
     margin-bottom: 22.5px;
+    @media (max-width: 768px) {
+      margin-bottom: 15px;
+    }
   }
 
   &__price {
@@ -335,37 +344,54 @@
 
   &__text {
     margin-bottom: 66px;
+    @media (max-width: 768px) {
+      margin-bottom: 20px;
+      p {
+        width: 85vw;
+      }
+    }
   }
 }
 .titlename {
   font-family: Roboto;
   @include font(33px, 56px, none, none, 700);
   text-align: right;
+  @media (max-width: 768px) {
+    text-align: center;
+  }
 }
 .subtitlename {
   font-family: Cardo;
-  @include font(18px, 37px, none, none, none);
+  @include font_little(18px, 37px, none, none, none);
   font-style: italic;
   text-align: right;
+  @media (max-width: 768px) {
+    text-align: center;
+  }
 }
 .price {
   font-family: Cardo;
-  @include font(15px, 28px, none, none, none);
+  @include font_little(15px, 28px, none, none, none);
   text-align: right;
+  @media (max-width: 768px) {
+    text-align: center;
+  }
 }
 .textname {
   font-family: Cardo;
   @include font(18px, 31px, none, #525252, none);
   text-align: right;
+  @media (max-width: 768px) {
+    text-align: center;
+  }
   span {
     font-style: italic;
   }
 }
 .shopnow {
   font-family: Roboto;
-  @include font(17px, 22px, none, none, none);
+  @include font_little(17px, 22px, none, none, none);
   text-align: right;
-
   a {
     color: #000;
     border-radius: 5px;
@@ -382,7 +408,9 @@
 .img {
   img {
     width: 59vw;
-    height: auto;
+    @media (max-width: 768px) {
+      width: 90vw;
+    }
   }
 }
 
@@ -391,45 +419,77 @@
   padding-top: 30px;
   &__row {
     @include flex(flex, row, flex-start, center);
+    @media (max-width: 768px) {
+      @include flex(flex, column, center, center);
+    }
   }
 
   &__column {
     margin-left: 20px;
     margin-right: 75px;
+    @media (max-width: 768px) {
+      margin-left: 0;
+      margin-right: 0;
+    }
   }
 
   &__title {
     margin-bottom: 4px;
     text-align: left;
+    @media (max-width: 768px) {
+      margin-top: 10px;
+      text-align: center;
+    }
   }
 
   &__subtitle {
     margin-bottom: 21.5px;
     text-align: left;
+    @media (max-width: 768px) {
+      margin-bottom: 14px;
+      text-align: center;
+    }
   }
 
   &__price {
     margin-bottom: 26.3px;
     text-align: left;
+    @media (max-width: 768px) {
+      text-align: center;
+    }
   }
 
   &__text {
     margin-bottom: 24px;
     text-align: left;
+    @media (max-width: 768px) {
+      text-align: center;
+      margin-bottom: 20px;
+      p {
+        width: 85vw;
+      }
+    }
   }
 
   &__sizecolor {
     margin-bottom: 47px;
     text-align: left;
+    @media (max-width: 768px) {
+      margin-bottom: 25px;
+      text-align: center;
+    }
   }
 
   &__linkshop {
     text-align: left;
+    @media (max-width: 768px) {
+      text-align: right;
+    }
   }
 }
 .sizcol {
   font-family: Cardo;
-  @include font(16px, 27px, none, #525252, none);
+  @include font_little(16px, 27px, none, #525252, none);
 }
 
 // six frame
