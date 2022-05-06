@@ -754,34 +754,85 @@
 
 // tenth frame
 .tenth-frame {
-  padding-top: 135px;
-  &__title {
-    font-family: Cardo;
-    @include font(20px, 30px, none, #020202, none);
-    font-style: italic;
-    text-align: center;
-    margin-bottom: 40px;
+  margin-top: 100px;
+  &__slider {
+    width: 100vw;
+    margin: 20px auto 0 auto;
+    overflow: hidden;
+    input {
+      position: absolute;
+      visibility: hidden;
+    }
+    p {
+      &:first-child {
+        font-family: Cardo;
+        @include font(20px, 30px, none, #020202, none);
+        font-style: italic;
+        text-align: center;
+        margin-bottom: 40px;
+      }
+      &:last-child {
+        font-family: Cardo;
+        @include font_little(15px, 21px, none, none, none);
+        text-align: center;
+        margin-bottom: 50px;
+      }
+    }
+  }
+  &__slides {
+    width: 300%;
+    @include flex(flex, none, none, none);
+  }
+  &__slide {
+    width: 100vw;
+    transition: all 0.6s ease-in-out;
+    padding: 0 20px;
+  }
+  &__navigation {
+    position: relative;
+    top: 5px;
+    width: 80px;
+    margin: 0 auto;
+    @include flex(flex, none, none, none);
+  }
+  &__bar {
+    width: 10px;
+    height: 10px;
+    &:not(:last-child) {
+      margin-right: 20px;
+    }
+    cursor: pointer;
+    background-color: #000;
+    opacity: 0.7;
+    transition: all 0.6s ease-in-out;
+
+    &:hover {
+      opacity: 1;
+      transform: scale(1.2);
+    }
   }
 
-  &__subtitle {
-    font-family: Cardo;
-    @include font(15px, 21px, none, none, none);
-    text-align: center;
-    margin-bottom: 50px;
+  #r4:checked ~ &__s2 {
+    margin-left: 0;
   }
-  &__slider {
-    text-align: center;
+  #r5:checked ~ &__s2 {
+    margin-left: -100vw;
+  }
+  #r6:checked ~ &__s2 {
+    margin-left: -200vw;
   }
 }
 
 // eleven frame
 .eleven-frame {
-  padding-top: 150px;
+  margin-top: 100px;
   &__row {
     @include flex(flex, none, space-between, center);
     margin: 0 auto;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding: 0 20px;
+    @media (max-width: 768px) {
+      @include flex(flex, column, center, center);
+    }
   }
 
   &__column {
@@ -790,8 +841,18 @@
     img {
       width: 5vw;
       height: 5vw;
+      @media (max-width: 768px) {
+        width: 15vw;
+        height: 15vw;
+      }
     }
     margin-right: 20px;
+    @media (max-width: 768px) {
+      margin-right: 0;
+      &:not(:last-child) {
+        margin-bottom: 50px;
+      }
+    }
     &:last-child {
       margin-right: 0px;
     }
@@ -809,13 +870,13 @@
 
   &__text {
     font-family: Cardo;
-    @include font(15px, 28px, none, none, 400);
+    @include font_little(15px, 28px, none, none, 400);
     margin-bottom: 28px;
   }
 
   &__link {
     font-family: Cardo;
-    @include font(15px, 15px, none, none, none);
+    @include font_little(15px, 15px, none, none, none);
     a {
       color: #000;
       transition: 0.25s;
@@ -828,7 +889,7 @@
 
 // twelfth frame
 .twelfth-frame {
-  margin-top: 180px;
+  margin-top: 100px;
   &__title {
     font-family: Cardo;
     @include font(20px, 26px, 0.3em, #454545, normal);
@@ -838,6 +899,9 @@
   &__imgblock {
     margin-top: 50px;
     @include flex(flex, none, space-around, center);
+    @media (max-width: 768px) {
+      flex-wrap: wrap;
+    }
   }
   margin-bottom: 50px;
 }
@@ -849,26 +913,39 @@
   padding-top: 50px;
   &__row-start {
     @include flex(flex, row, space-around, flex-start);
+    @media (max-width: 768px) {
+      @include flex(flex, column, center, center);
+    }
   }
 
   &__columns-left-side {
     @include flex(flex, row, space-around, none);
+    @media (max-width: 768px) {
+      @include flex(flex, column, center, center);
+    }
   }
 
   &__column {
     @include flex(flex, column, none, center);
     min-width: 208px;
     margin-right: 20px;
+    @media (max-width: 768px) {
+      margin-right: 0px;
+      margin-bottom: 70px;
+    }
   }
 
   &__title {
     text-transform: uppercase;
     margin-bottom: 45px;
     @include font(21px, 21px, none, #000, none);
+    @media (max-width: 768px) {
+      margin-bottom: 25px;
+    }
   }
 
   &__link {
-    @include font(15px, 20px, none, #000, none);
+    @include font_little(15px, 20px, none, #000, none);
 
     text-align: center;
     a {
@@ -888,8 +965,11 @@
   }
 
   &__title-right-side {
-    @include font(15px, 28px, none, #000, none);
+    @include font_little(15px, 28px, none, #000, none);
     margin-bottom: 17px;
+    @media (max-width: 768px) {
+      padding: 0 20px;
+    }
   }
 
   &__button-sub {
@@ -911,6 +991,9 @@
     img {
       &:first-child {
         margin-right: 40px;
+        @media (max-width: 768px) {
+          margin-right: 0;
+        }
       }
     }
     margin-bottom: 19px;
@@ -920,13 +1003,24 @@
     margin-top: 25px;
     margin-bottom: 50px;
     @include flex(flex, none, space-around, center);
+    @media (max-width: 768px) {
+      @include flex(flex, column-reverse, space-between, center);
+      p {
+        position: absolute;
+        visibility: hidden;
+      }
+    }
   }
 
   &__imgblock {
     img {
       &:nth-child(4) {
         margin-right: 10px;
+        border: 1px solid #000;
       }
+    }
+    @media (max-width: 768px) {
+      margin-bottom: 25px;
     }
   }
 
@@ -938,7 +1032,11 @@
       }
     }
     margin-right: -50px;
-    @include font(12px, 22px, none, #000, none);
+    @media (max-width: 768px) {
+      margin-right: 0;
+      margin-bottom: 25px;
+    }
+    @include font_little(12px, 22px, none, #000, none);
   }
 
   &__policy {
@@ -949,6 +1047,9 @@
       }
     }
     margin-left: -50px;
-    @include font(11px, 22px, none, #000, none);
+    @media (max-width: 768px) {
+      margin-left: 0;
+    }
+    @include font_little(11px, 22px, none, #000, none);
   }
 }
