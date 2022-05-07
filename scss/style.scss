@@ -248,7 +248,7 @@
 }
 
 // three frame
-.three-frame {
+.threeth-frame {
   &__row {
     @include flex(flex, none, space-between, none);
     @media (max-width: 768px) {
@@ -309,7 +309,7 @@
 }
 
 // four frame
-.four-frame {
+.fourth-frame {
   padding-top: 80px;
   &__row {
     @include flex(flex, none, flex-end, center);
@@ -407,8 +407,13 @@
   }
 }
 .img {
+  display: flex;
+  align-self: stretch;
+  @media (max-width: 768px) {
+    align-self: center;
+  }
   img {
-    width: 59vw;
+    width: 60vw;
     @media (max-width: 768px) {
       width: 90vw;
     }
@@ -416,10 +421,10 @@
 }
 
 // five frame
-.five-frame {
+.fiveth-frame {
   padding-top: 30px;
   &__row {
-    @include flex(flex, row, flex-start, center);
+    @include flex(flex, none, flex-start, center);
     @media (max-width: 768px) {
       @include flex(flex, column, center, center);
     }
@@ -491,7 +496,7 @@
 }
 
 // six frame
-.six-frame {
+.sixth-frame {
   padding-top: 30px;
   &__row {
     @include flex(flex, none, right, center);
@@ -551,7 +556,7 @@
 }
 
 // seven-frame
-.seven-frame {
+.seventh-frame {
   padding-top: 30px;
   &__row {
     @include flex(flex, none, flex-start, center);
@@ -628,7 +633,7 @@
 }
 
 // eight-frame
-.eight-frame {
+.eighth-frame {
   padding-top: 30px;
   &__row {
     @include flex(flex, none, flex-end, flex-end);
@@ -824,10 +829,10 @@
 }
 
 // eleven frame
-.eleven-frame {
+.eleventh-frame {
   margin-top: 100px;
   &__row {
-    @include flex(flex, none, space-between, center);
+    @include flex(flex, none, space-between, stretch);
     margin: 0 auto;
     padding: 0 20px;
     @media (max-width: 768px) {
@@ -836,7 +841,7 @@
   }
 
   &__column {
-    @include flex(flex, column, center, center);
+    @include flex(flex, column, space-between, center);
     text-align: center;
     img {
       width: 5vw;
@@ -913,6 +918,7 @@
   padding-top: 50px;
   &__row-start {
     @include flex(flex, row, space-around, flex-start);
+    flex-wrap: wrap;
     @media (max-width: 768px) {
       @include flex(flex, column, center, center);
     }
@@ -1003,7 +1009,7 @@
     margin-top: 25px;
     margin-bottom: 50px;
     @include flex(flex, none, space-around, center);
-    @media (max-width: 768px) {
+    @media (max-width: 1024px) {
       @include flex(flex, column-reverse, space-between, center);
       p {
         position: absolute;
@@ -1019,7 +1025,7 @@
         border: 1px solid #000;
       }
     }
-    @media (max-width: 768px) {
+    @media (max-width: 1024px) {
       margin-bottom: 25px;
     }
   }
@@ -1032,7 +1038,7 @@
       }
     }
     margin-right: -50px;
-    @media (max-width: 768px) {
+    @media (max-width: 1024px) {
       margin-right: 0;
       margin-bottom: 25px;
     }
@@ -1047,7 +1053,7 @@
       }
     }
     margin-left: -50px;
-    @media (max-width: 768px) {
+    @media (max-width: 1024px) {
       margin-left: 0;
     }
     @include font_little(11px, 22px, none, #000, none);
